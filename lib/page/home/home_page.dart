@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
             child: BlocBuilder<TodoBloc, TodoListState>(
               builder: (context, state) {
                 if (state is UninitializedTodoList) {
-                  return Text('Uninitialized');
+                  return Text('No Tasks');
                 } else if (state is HasValueTodoState) {
                   return ListView.builder(
                     itemCount: state.tasks.length,
@@ -45,9 +45,7 @@ class HomePage extends StatelessWidget {
                               ),
                               subtitle: Text(
                                 state.tasks[index].description,
-                                style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold),
+                                style: TextStyle(color: Colors.grey),
                               ),
                               trailing: IconButton(
                                 icon: Icon(
@@ -71,10 +69,9 @@ class HomePage extends StatelessWidget {
             height: 32,
           ),
           FlatButton(
-            color: Colors.blue,
-            child: Text(
-              'Add Task',
-              style: TextStyle(color: Colors.white),
+            child: CircleAvatar(
+              child: Icon(Icons.add),
+              backgroundColor: Colors.blue,
             ),
             onPressed: () {
               titleController.text = "";
