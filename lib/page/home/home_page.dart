@@ -33,16 +33,6 @@ class HomePage extends StatelessWidget {
                           child: ListTile(
                               contentPadding: EdgeInsets.symmetric(
                                   horizontal: 20.0, vertical: 10.0),
-                              leading: Container(
-                                padding: EdgeInsets.only(right: 12.0),
-                                decoration: new BoxDecoration(
-                                    border: new Border(
-                                        right: new BorderSide(
-                                            width: 1.0,
-                                            color: Colors.white24))),
-                                child: Icon(Icons.panorama_fish_eye,
-                                    color: Colors.red),
-                              ),
                               title: Text(
                                 state.tasks[index].title,
                                 textAlign: TextAlign.center,
@@ -83,7 +73,7 @@ class HomePage extends StatelessWidget {
           FlatButton(
             color: Colors.blue,
             child: Text(
-              'ADD',
+              'Add Task',
               style: TextStyle(color: Colors.white),
             ),
             onPressed: () {
@@ -132,7 +122,7 @@ class HomePage extends StatelessWidget {
                                       }
                                     },
                                   ),
-                                )
+                                ),
                               ],
                             ),
                           ),
